@@ -1,0 +1,69 @@
+﻿{%extends 'ScaffoldApp/layout.html' %}
+{% block content %}
+
+<div class="container my-container text-center">
+    <form method="post" name="AddProject">
+        {% csrf_token %}
+        <table align="center">
+            <tr>
+                <td>
+                    <h1>Add Project </h1>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Project Title:</b></td>
+                <td>{{addprojectform.projectTitle}}</td>
+            </tr>
+            <tr>
+                <td><b>Project Id:</b></td>
+                <td>{{addprojectform.projectId}}</td>
+            </tr>
+            <tr>
+                <td><b>Project Contract No:</b></td>
+                <td>{{addprojectform.projectContractNo}}</td>
+            </tr>
+            <tr>
+                <td><b>Project Site Location:</b></td>
+                <td>{{addprojectform.projectSiteLocation}}</td>
+            </tr>
+            <tr>
+                <td><b> Project Mail Location:</b></td>
+                <td>{{addprojectform.projectMailLocation}}</td>
+            </tr>
+            <tr>
+                <td><b> Project Order Number:</b></td>
+                <td>{{addprojectform.orderNumber}}</td>
+            </tr>
+
+            <tr>
+                <td><b> Project Status:</b></td>
+                <td>{{addprojectform.projectStatus}}</td>
+            </tr>
+            <tr>
+                <td><b> Project Recorded By:</b></td>
+                <td>{{addprojectform.projectRecordedBy}}</td>
+            </tr>
+            <tr>
+                <td><b> Tx Truck Rates:</b></td>
+                <td>{{addprojectform.txTruckRates}}</td>
+            </tr>
+            <tr>
+                <td><b>Remarks:</b></td>
+                <td>{{addprojectform.remarks}}</td>
+            </tr>
+
+            <tr>
+                <td align="center">
+                    <input type="submit" name="submit" value="Add">
+                </td>
+                <td align="center">
+                    <input type="reset" name="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+ </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,126 @@
+﻿{% extends 'ScaffoldApp/layout.html' %}
+{% block content %}
+
+<div class="container my-container text-center">
+    <form method="post" name="AddSupplier">
+        {% csrf_token %}
+        <div class="row my-row">
+            <div class="col my-col col-lg-6 col-md-8">
+                <h3> Add Supplier</h3>
+            </div>
+        </div>
+        <div class="row my-row">
+            <div class="col my-col col-lg-6 col-md-8">
+                <div class="input-group">
+                    <div class="input-group-prepend input-group-text">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    {{addSupplierform.supplierId}}
+                </div>
+            </div>
+        </div>
+        <div class="row my-row">
+            <div class="col my-col col-lg-6 col-md-8">
+                <div class="input-group">
+                    <div class="input-group-prepend input-group-text">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    {{addSupplierform.supplierName}}
+                </div>
+            </div>
+        </div>
+        <div class="row my-row">
+            <div class="col my-col col-lg-6 col-md-8">
+                <div class="input-group">
+                    <div class="input-group-prepend input-group-text">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    {{addSupplierform.supplierAddress}}
+                </div>
+            </div>
+        </div>
+        <div class="row my-row">
+            <div class="col my-col col-lg-6 col-md-8">
+                <div class="input-group">
+                    <div class="input-group-prepend input-group-text">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    {{addSupplierform.supplierUrl}}
+                </div>
+            </div>
+        </div>
+        <div class="row my-row">
+            <div class="col my-col col-lg-6 col-md-8">
+                <div class="input-group">
+                    <div class="input-group-prepend input-group-text">
+                        <i class="fas fa-portrait"></i>
+                    </div>
+                    {{addSupplierform.supplierContactPerson}}
+                </div>
+            </div>
+        </div>
+        <div class="row my-row">
+            <div class="col my-col col-lg-3 col-md-4">
+                <div class="input-group">
+                    <div class="input-group-prepend input-group-text">
+                        <i class="fas fa-phone-volume"></i>
+                    </div>
+                    {{addSupplierform.supplierContact1}}
+                </div>
+            </div>
+            <div class="col my-col col-lg-3 col-md-4">
+                <div class="input-group">
+                    <div class="input-group-prepend input-group-text">
+                        <i class="fas fa-phone-volume"></i>
+                    </div>
+                    {{addSupplierform.supplierContact2}}
+                </div>
+            </div>
+        </div>
+        <div class="row my-row">
+            <div class="col my-col col-lg-6 col-md-8">
+                <div class="input-group">
+                    <div class="input-group-prepend input-group-text">
+                        <i class="fas fa-fax"></i>
+                    </div>
+                    {{addSupplierform.supplierContactFax}}
+                </div>
+            </div>
+        </div>
+        <div class="row my-row">
+            <div class="col my-col col-lg-6 col-md-8">
+                <div class="input-group">
+                    <div class="input-group-prepend input-group-text">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    {{addSupplierform.supplierEmail}}
+                </div>
+            </div>
+        </div>
+        <div class="row my-row">
+            <div class="col  my-col col-lg-2 col-sm-2">
+                <button type="submit" class="btn btn-success ">Add</button>
+            </div>
+            <div class="col  my-col col-lg-2 col-sm-2">
+                <button type="reset" class="btn btn-primary ">Reset</button>
+            </div>
+        </div>
+     </form>
+    {% if addSupplierform.errors %}
+    <div class="col-6">
+        {% for field in addSupplierform %}
+             {% for error in field.errors %}
+                <div class="alert alert-danger" id="myWish">
+                    <strong>{{ error|escape }}</strong>
+                </div>
+             {% endfor %}
+       {% endfor %}
+       {% for error in addSupplierform.non_field_errors %}
+            <div class="alert alert-danger" id="myWish">
+                <strong>{{ error|escape }}</strong>
+            </div>
+       {% endfor %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
