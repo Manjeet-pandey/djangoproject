@@ -23,6 +23,7 @@ class Migration(migrations.Migration):
                 ('supplierContact2', models.IntegerField()),
                 ('supplierContactFax', models.CharField(max_length=100)),
                 ('supplierEmail', models.EmailField(max_length=100)),
+            
             ],
         ),
     ]

@@ -5,6 +5,7 @@ class AddProduct(models.Model):
     productName= models.CharField(max_length=100)
     productMaterialItemCode= models.CharField(max_length=100)
     productBrandNewSellingRate= models.FloatField()
+    productSecondHandSellingRate= models.FloatField()
     productLossRate=models.FloatField()
     productRepairRate=models.FloatField()
     productDailyRentalRate=models.FloatField()
@@ -16,6 +17,7 @@ class AddProduct(models.Model):
     productRecordedBy=models.CharField(max_length=100)
     supplierName=models.CharField(max_length=100)
     remarks=models.CharField(max_length=200)
+    stock=models.IntegerField()
 
 class AddProject(models.Model):
     projectTitle=models.CharField(max_length=100)
@@ -39,5 +41,6 @@ class AddSupplier(models.Model):
     supplierContact2=models.CharField(max_length=30)
     supplierContactFax=models.CharField(max_length=100)
     supplierEmail=models.EmailField(max_length=100)
+    
 
   

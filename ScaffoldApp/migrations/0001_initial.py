@@ -18,6 +18,7 @@ class Migration(migrations.Migration):
                 ('productName', models.CharField(max_length=100)),
                 ('productMaterialItemCode', models.CharField(max_length=100)),
                 ('productBrandNewSellingRate', models.FloatField()),
+                ('productSecondHandSellingRate', models.FloatField()),
                 ('productLossRate', models.FloatField()),
                 ('productRepairRate', models.FloatField()),
                 ('productDailyRentalRate', models.FloatField()),
@@ -29,6 +30,7 @@ class Migration(migrations.Migration):
                 ('productRecordedBy', models.CharField(max_length=100)),
                 ('supplierName', models.CharField(max_length=100)),
                 ('remarks', models.CharField(max_length=200)),
+                
             ],
         ),
     ]

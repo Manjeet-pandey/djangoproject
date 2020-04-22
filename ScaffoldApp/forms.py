@@ -8,6 +8,8 @@ class addProductForm(forms.ModelForm):
                                 required=True,max_length=100)
     productBrandNewSellingRate=forms.FloatField(widget=forms.NumberInput(attrs={'placeholder':'Product Brand-New Selling Rate'}),
                                 required=True)
+    productSecondHandSellingRate=forms.FloatField(widget=forms.NumberInput(attrs={'placeholder':'Product Second-Hand Selling Rate'}),
+                                required=True)
     productLossRate=forms.FloatField(widget=forms.NumberInput(attrs={'placeholder':'Product Loss Rate'}),
                                 required=True)
     productRepairRate=forms.FloatField(widget=forms.NumberInput(attrs={'placeholder':'Product Repair Rate'}),
@@ -30,12 +32,14 @@ class addProductForm(forms.ModelForm):
                                 required=True,max_length=100)
     remarks=forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Remarks'}),
                                 required=True,max_length=200)
+   
     class Meta:
         model=AddProduct
         fields=[
                 'productName',
                 'productMaterialItemCode',
                 'productBrandNewSellingRate',
+                'productSecondHandSellingRate',
                 'productLossRate',
                 'productRepairRate',
                 'productDailyRentalRate',
@@ -46,7 +50,8 @@ class addProductForm(forms.ModelForm):
                 'productMonthlyHireCharge',
                 'productRecordedBy',
                 'supplierName',
-                'remarks'
+                'remarks',
+                'stock'
                ]
 
 class addProjectForm(forms.ModelForm):
@@ -113,6 +118,30 @@ class addSupplierForm(forms.ModelForm):
     supplierEmail=forms.EmailField(widget=forms.TextInput(
         attrs={'class':'form-control','placeholder':'Supplier Email'}),
                                    required=True,max_length=100)
+    supplierRecordedBy=forms.CharField(widget=forms.TextInput(
+        attrs={'class':'form-control','placeholder':'Supplier Recorded By'}),
+                                   required=True,max_length=100)
+    supplierHireQuantity=forms.FloatField(widget=forms.TextInput(
+        attrs={'class':'form-control','placeholder':'Supplier Hire Quantity'}),
+                                   required=True)
+    supplierDiscount=forms.FloatField(widget=forms.TextInput(
+        attrs={'class':'form-control','placeholder':'Supplier Discount'}),
+                                   required=True)
+    supplierPaymentTerms=forms.CharField(widget=forms.TextInput(
+        attrs={'class':'form-control','placeholder':'Supplier Payment Terms'}),
+                                   required=True,max_length=100)                               
+    supplierRemarks=forms.CharField(widget=forms.TextInput(
+        attrs={'class':'form-control','placeholder':'Supplier Remarks'}),
+                                   required=True,max_length=100)
+    quotationPaymentTerms=forms.CharField(widget=forms.TextInput(
+        attrs={'class':'form-control','placeholder':'Quotation Payment Terms'}),
+                                   required=True,max_length=100)
+    quotationRecordedBy=forms.CharField(widget=forms.TextInput(
+        attrs={'class':'form-control','placeholder':'Quotation Recorded By'}),
+                                   required=True,max_length=100)
+    txTruckRates=forms.FloatField(widget=forms.TextInput(
+        attrs={'class':'form-control','placeholder':'Tx Truck Rates'}),
+                                   required=True)
     class Meta:
         model=AddSupplier
         fields=[
@@ -124,6 +153,16 @@ class addSupplierForm(forms.ModelForm):
                 'supplierContact1',
                 'supplierContact2',
                 'supplierContactFax',
-                'supplierEmail'
+                'supplierEmail',
+                'supplierRecordedBy',
+                'supplierHireQuantity',
+                'supplierDiscount',
+                'supplierPaymentTerms',
+                'supplierRemarks',
+                'quotationPaymentTerms',
+                'quotationRecordedBy',
+                'txTruckRates'
+
+
               ]
      

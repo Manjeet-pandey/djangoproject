@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'scaffold.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Mydb',
+        'NAME': 'Data',
         'USER':'postgres',
         'PASSWORD':'hello',
         'HOST':'localhost'
@@ -116,3 +116,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+#Email client
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
